@@ -11,12 +11,15 @@
   <%= render 'layouts/header' %>
     <div class="container">
       <% flash.each do |key,value| %>
+        <!-->
+        旧的用法
         <div class="alert alert-<%= key %>"> <%= value%></div>
+        < end-->
+        <%= contant_tag(:div,value,class:"alert alert-#{key}") %>
       <% end %>
         <%= yield %>
         <%= render 'layouts/footer' %>
         <%= debug(params) if Rails.env.development? %>
     </div>
-
 </body>
 </html>
