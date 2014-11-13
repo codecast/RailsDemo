@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   #email都存储为小写字母
+  #另一种用法　before_save {email.downcase!} 回调函数的另一种用法
   before_save{self.email = email.downcase}
 
   #validates 是一个方法validates()
